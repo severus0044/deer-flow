@@ -28,7 +28,7 @@ def validate_skill(skill_path):
 
     # Extract frontmatter. Allow trailing whitespace on the delimiters, like
     # the runtime parser in backend/packages/harness/deerflow/skills/frontmatter.py.
-    match = re.match(r'^---[ \t]*\n(.*?)\n---[ \t]*(?:\n|$)', content, re.DOTALL)
+    match = re.match(r'^---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|$)', content, re.DOTALL)
     if not match:
         return False, "Invalid frontmatter format"
 
